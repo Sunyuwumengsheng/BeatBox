@@ -5,6 +5,14 @@
 
     <data>
 
+        <variable
+            name="user"
+            type="com.example.beatbox.model.UserRequest" />
+
+        <variable
+            name="userViewModel"
+            type="com.example.beatbox.viewmodel.UserViewModel" />
+
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -13,12 +21,12 @@
         tools:context=".view.LoginAndRegisterActivity">
 
         <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.Shrine.TextInputLayout"
             android:id="@+id/textInputLayout"
+            style="@style/Widget.Shrine.TextInputLayout"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:layout_marginTop="250dp"
+            android:layout_height="90dp"
             android:layout_marginHorizontal="@dimen/login_text_margin"
+            android:layout_marginTop="250dp"
             android:hint="@string/login_user_id"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -26,31 +34,36 @@
             tools:ignore="MissingConstraints">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/user_id"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:drawableStart="@drawable/ic_login_user" />
+                android:drawableStart="@drawable/ic_login_user"
+                android:text="@={userViewModel.useName}" />
         </com.google.android.material.textfield.TextInputLayout>
 
 
         <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.Shrine.TextInputLayout"
             android:id="@+id/text_input_password_layout"
+            style="@style/Widget.Shrine.TextInputLayout"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="90dp"
+            android:layout_marginHorizontal="@dimen/login_text_margin"
             android:layout_marginTop="10dp"
             android:hint="@string/login_user_password"
-            android:layout_marginHorizontal="@dimen/login_text_margin"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
             tools:ignore="MissingConstraints">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/user_password"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:drawableStart="@drawable/ic_login_password" />
+                android:drawableStart="@drawable/ic_login_password"
+                android:text="@={userViewModel.password}" />
 
         </com.google.android.material.textfield.TextInputLayout>
+
 
         <TextView
             android:id="@+id/title"
@@ -80,5 +93,16 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/title"
             tools:ignore="MissingConstraints" />
+
+        <Button
+            android:id="@+id/login_btn"
+            style="@style/LoginAndRegisterBtnShape"
+            android:layout_width="150dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="50dp"
+            android:text="@string/login_btn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_input_password_layout" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

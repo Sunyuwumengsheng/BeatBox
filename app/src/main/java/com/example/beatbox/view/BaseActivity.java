@@ -33,6 +33,8 @@ public abstract class BaseActivity<VM extends BaseViewModel
     protected VDB binding;
 
 
+
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,5 +46,6 @@ public abstract class BaseActivity<VM extends BaseViewModel
     }
 
     protected abstract void createViewModel();
+
 
 }

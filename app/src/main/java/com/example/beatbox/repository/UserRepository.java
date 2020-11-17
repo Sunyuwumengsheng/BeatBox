@@ -34,12 +34,12 @@ public class UserRepository {
     }
 
     /**
-     * @description登录
-     * @param request
+     * @param useId
+     * @param password
      * @param callback
      */
-    public void login(UserRequest request, final HttpCallback<UserResponse> callback) {
-        Call<UserResponse> call = api.login(request.getUsername(), request.getPassword());
+    public void login(String useId,String password, final HttpCallback<UserResponse> callback) {
+        Call<UserResponse> call = api.login(useId, password);
         call.enqueue(new Callback<UserResponse>() {
             @Override
             public void onResponse(@Nullable Call<UserResponse> call,  @Nullable  Response<UserResponse> response) {
@@ -60,7 +60,7 @@ public class UserRepository {
      * @param callback
      */
     public void register(UserRequest request,final HttpCallback<UserResponse> callback){
-        Call<UserResponse> call = api.register(request.getUsername(),request.getPassword(),request.getRePassword());
+        Call<UserResponse> call = api.register(request.username,request.password,request.rePassword);
         call.enqueue(new Callback<UserResponse>() {
             @Override
             public void onResponse(@NonNull Call<UserResponse> call, @NonNull Response<UserResponse> response) {
