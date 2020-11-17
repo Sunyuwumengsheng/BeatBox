@@ -1,0 +1,3 @@
+include ':res'
+include ':app'
+rootProject.name='BeatBox'

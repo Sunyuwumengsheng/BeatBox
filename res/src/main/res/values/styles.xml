@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <style name="TextAppearance.Shrine.TextInputLayout.HintText" parent="TextAppearance.MaterialComponents.Subtitle2">
+        <item name="android:textColor">?android:attr/textColorPrimary</item>
+    </style>
+    <style name="Widget.Shrine.TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="hintTextAppearance">@style/TextAppearance.Shrine.TextInputLayout.HintText</item>
+        <item name="hintTextColor">@color/reply_blue_700</item>
+        <item name="android:paddingBottom">8dp</item>
+        <item name="boxStrokeColor">@color/reply_blue_800</item>
+        <item name="shapeAppearance">@style/ShapeAppearance.Reply.SmallComponent</item>
+    </style>
+</resources>

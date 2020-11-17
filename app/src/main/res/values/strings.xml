@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">BeatBox</string>
+    <string name="app_title1">WANG</string>
+    <string name="app_title2">安卓</string>
+    <string name="login_user_id"> 请输入用户名</string>
+    <string name="login_user_password"> 请输入密码</string>
+</resources>
