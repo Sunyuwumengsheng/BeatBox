@@ -13,8 +13,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".view.LoginAndRegisterActivity" />
+        tools:ignore="AllowBackup,GoogleAppIndexingWarning">
+        <activity android:name=".view.RegisterActivity"></activity>
+
+        <meta-data
+            android:name="design_wight_in_dp"
+            android:value="415" />
+        <meta-data
+            android:name="design_height_in_dp"
+            android:value="738" />
+
+        <activity android:name=".view.LoginActivity" />
         <activity android:name=".view.MainActivity" />
         <activity
             android:name=".view.SplashActivity"

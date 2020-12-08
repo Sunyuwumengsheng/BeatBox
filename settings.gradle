@@ -1,3 +1,5 @@
+include ':ktdslibrary'
+include ':commonlibrary'
 include ':res'
 include ':app'
 rootProject.name='BeatBox'

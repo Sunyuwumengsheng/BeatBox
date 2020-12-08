@@ -11,6 +11,7 @@ import com.example.beatbox.api.Api;
 import com.example.beatbox.callbacks.HttpCallback;
 import com.example.beatbox.model.UserRequest;
 import com.example.beatbox.model.UserResponse;
+import com.example.ktdslibrary.DsDataStore;
 
 import java.util.Objects;
 
@@ -43,8 +44,11 @@ public class UserRepository {
         call.enqueue(new Callback<UserResponse>() {
             @Override
             public void onResponse(@Nullable Call<UserResponse> call,  @Nullable  Response<UserResponse> response) {
-                callback.success(Objects.requireNonNull(response,"response为空").body());
-                Log.d(TAG, Objects.requireNonNull(response.headers().get("Set-Cookie")));
+                if (response.body().errorCode ==0 ){
+                    callback.success(Objects.requireNonNull(response,"response为空").body());
+                }else {
+                    callback.error(Objects.requireNonNull(response,"response为空").body());
+                }
             }
 
             @Override
@@ -64,7 +68,12 @@ public class UserRepository {
         call.enqueue(new Callback<UserResponse>() {
             @Override
             public void onResponse(@NonNull Call<UserResponse> call, @NonNull Response<UserResponse> response) {
-                callback.success(Objects.requireNonNull(response,"response为空").body());
+                if (response.body().errorCode ==0 ){
+                    callback.success(Objects.requireNonNull(response,"response为空").body());
+                }else {
+                    callback.error(Objects.requireNonNull(response,"response为空").body());
+                }
+
                 Log.d(TAG, Objects.requireNonNull(response.headers().get("Set-Cookie")));
             }
 

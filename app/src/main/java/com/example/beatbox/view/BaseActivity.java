@@ -1,7 +1,9 @@
 package com.example.beatbox.view;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.os.PersistableBundle;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -28,6 +30,28 @@ public abstract class BaseActivity<VM extends BaseViewModel
      */
     protected abstract void processLogic();
 
+    /**
+     * 创建viewMode
+     */
+    protected abstract void createViewModel();
+
+    /**
+     * Toast提示
+     * @param ctx
+     * @param msg
+     */
+    public void showLoginToast(Context ctx,String msg){
+        Toast.makeText(ctx,msg,Toast.LENGTH_LONG).show();
+    }
+    public void showShortToast(Context ctx,String msg){
+        Toast.makeText(ctx,msg,Toast.LENGTH_SHORT).show();
+    }
+
+    /**
+     * 是否开启动画
+     */
+    protected abstract void isStartTransitions();
+
     protected VM mViewModel;
 
     protected VDB binding;
@@ -38,6 +62,7 @@ public abstract class BaseActivity<VM extends BaseViewModel
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        isStartTransitions();
         setContentView(getContentViewId());
         binding = DataBindingUtil.setContentView(this,getContentViewId());
         binding.setLifecycleOwner(this);
@@ -45,7 +70,7 @@ public abstract class BaseActivity<VM extends BaseViewModel
         processLogic();
     }
 
-    protected abstract void createViewModel();
+
 
 
 }

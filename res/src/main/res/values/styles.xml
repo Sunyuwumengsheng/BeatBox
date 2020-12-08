@@ -12,4 +12,8 @@
         <item name="boxStrokeColor">@color/reply_blue_800</item>
         <item name="shapeAppearance">@style/ShapeAppearance.Reply.SmallComponent</item>
     </style>
+
+    <style name="Widget.LoginAndRegisterBtnShape" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="shapeAppearance">@style/ShapeAppearance.Rounded.logButton</item>
+    </style>
 </resources>

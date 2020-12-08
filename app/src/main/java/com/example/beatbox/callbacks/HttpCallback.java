@@ -19,4 +19,10 @@ public interface HttpCallback<T> {
      */
     void failure(Throwable e);
 
+    /**
+     * @param t
+     */
+    void error(T t);
+
+
 }

@@ -5,4 +5,8 @@
     <string name="login_user_id"> 请输入用户名</string>
     <string name="login_user_password"> 请输入密码</string>
     <string name="login_btn">确认登录</string>
+    <string name="to_register">去注册</string>
+    <string name="to_login">去注册</string>
+    <string name="text_or">OR</string>
+    <string name="title_main_label">首页</string>
 </resources>

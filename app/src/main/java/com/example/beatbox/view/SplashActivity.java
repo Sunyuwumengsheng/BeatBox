@@ -1,17 +1,17 @@
 package com.example.beatbox.view;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ActivityOptions;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.CountDownTimer;
-import android.os.Handler;
-import android.os.Looper;
-import android.os.Message;
+import android.util.Log;
 
 import com.example.beatbox.R;
-import com.example.beatbox.mmkv.MmkvSinger;
+import com.example.beatbox.global.GlobalData;
+import com.example.beatbox.mmkv.MmkvTools;
 
 /**
  * @author STY启动页
@@ -37,15 +37,19 @@ public class SplashActivity extends AppCompatActivity {
                 @Override
                 public void onFinish() {
                     countDownTimer.cancel();
-                    String cookie = MmkvSinger.getInstance().getMkn().decodeString("user_cookie");
-                    if (cookie != null) {
-                        Intent mainIntent = new Intent(SplashActivity.this, MainActivity.class);
-                        startActivity(mainIntent);
-                    } else {
-                        Intent logIntent = new Intent(SplashActivity.this, LoginAndRegisterActivity.class);
-                        startActivity(logIntent);
+                    Intent mainIntent = new Intent(SplashActivity.this, MainActivity.class);
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                        startActivity(mainIntent, ActivityOptions.makeSceneTransitionAnimation(SplashActivity.this).toBundle());
                     }
-
+//                    String cookie = MmkvTools.getInstance().getString(GlobalData.COOKIE,null);
+//                    if (cookie != null) {
+//                        Log.d("cookie", cookie);
+//
+//                    } else {
+//                        Intent logIntent = new Intent(SplashActivity.this, LoginActivity.class);
+//                        startActivity(logIntent);
+//                    }
+                    finish();
                 }
             };
             countDownTimer.start();

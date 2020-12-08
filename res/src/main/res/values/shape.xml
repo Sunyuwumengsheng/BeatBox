@@ -20,10 +20,12 @@
     <style name="ShapeAppearanceOverlay.Reply.MediumComponent.Marked" parent="">
         <item name="cornerSizeTopLeft">@dimen/reply_small_component_corner_radius</item>
     </style>
-    <style name="LoginAndRegisterBtnShape">
-        <item name="android:background">@drawable/login_reigster_shape</item>
+    <style name="ShapeAppearance.Rounded.logButton" parent="ShapeAppearance.MaterialComponents.SmallComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">@dimen/log_btn_corner_radius</item>
     </style>
 
+    <dimen name="log_btn_corner_radius">20dp</dimen>
     <dimen name="reply_medium_component_corner_radius">0dp</dimen>
     <dimen name="reply_large_component_corner_radius">12dp</dimen>
     <dimen name="reply_small_component_corner_radius">24dp</dimen>
