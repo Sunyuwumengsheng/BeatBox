@@ -1,21 +1,32 @@
 package com.example.beatbox.view;
 
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentStatePagerAdapter;
+import androidx.lifecycle.Lifecycle;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.viewpager2.adapter.FragmentStateAdapter;
+import androidx.viewpager2.widget.MarginPageTransformer;
 
 import android.os.Build;
-import android.os.Bundle;
-import android.transition.Explode;
 import android.transition.Fade;
-import android.view.View;
 import android.view.Window;
-import android.widget.Button;
 
+import com.example.baselibrary.BaseActivity;
 import com.example.beatbox.R;
-import com.example.beatbox.StyApplication;
+import com.example.beatbox.adapter.ViewPageAdapter;
 import com.example.beatbox.databinding.ActivityMainBinding;
+import com.example.beatbox.view.fragment.home.HomeFragment;
+import com.example.beatbox.view.fragment.project.ProjectFragment;
+import com.example.beatbox.view.fragment.square.SquareFragment;
+import com.example.beatbox.view.fragment.system.SystemFragment;
 import com.example.beatbox.viewmodel.UserViewModel;
 import com.example.beatbox.viewmodel.factory.UserViewModelFactory;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author STY
@@ -30,6 +41,7 @@ public class MainActivity extends BaseActivity<UserViewModel,ActivityMainBinding
 
     @Override
     protected void processLogic() {
+        initView();
 
     }
 
@@ -48,6 +60,14 @@ public class MainActivity extends BaseActivity<UserViewModel,ActivityMainBinding
             getWindow().requestFeature(Window.FEATURE_CONTENT_TRANSITIONS);
         }
     }
+
+    private void initView(){
+
+        ViewPageAdapter viewPageAdapter = new ViewPageAdapter(this);
+        binding.viewPage.setPageTransformer(new MarginPageTransformer((int) getResources().getDimension(R.dimen.dp_10)));
+        binding.viewPage.setAdapter(viewPageAdapter);
+    }
+
 
 
 }

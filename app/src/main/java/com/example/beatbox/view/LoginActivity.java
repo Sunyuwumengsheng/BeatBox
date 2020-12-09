@@ -6,10 +6,10 @@ import android.os.Build;
 import android.transition.Explode;
 import android.view.Window;
 
-import androidx.annotation.RequiresApi;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.example.baselibrary.BaseActivity;
 import com.example.beatbox.R;
 import com.example.beatbox.databinding.ActivityLoginBinding;
 import com.example.beatbox.viewmodel.UserViewModel;

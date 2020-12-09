@@ -1,16 +1,15 @@
 package com.example.beatbox.view;
 
-import android.content.Intent;
-
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.example.baselibrary.BaseActivity;
 import com.example.beatbox.R;
 import com.example.beatbox.databinding.ActivityRegisterBinding;
 import com.example.beatbox.viewmodel.UserViewModel;
 import com.example.beatbox.viewmodel.factory.UserViewModelFactory;
 
-public class RegisterActivity extends BaseActivity<UserViewModel, ActivityRegisterBinding>{
+public class RegisterActivity extends BaseActivity<UserViewModel, ActivityRegisterBinding> {
     @Override
     protected int getContentViewId() {
         return R.layout.activity_register;

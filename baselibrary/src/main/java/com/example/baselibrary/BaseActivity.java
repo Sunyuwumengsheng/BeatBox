@@ -1,18 +1,13 @@
-package com.example.beatbox.view;
+package com.example.baselibrary;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
-import androidx.lifecycle.ViewModelProvider;
-
-import java.lang.reflect.ParameterizedType;
-import java.lang.reflect.Type;
 
 /**
  * @author STY activity 父类
@@ -51,6 +46,7 @@ public abstract class BaseActivity<VM extends BaseViewModel
      * 是否开启动画
      */
     protected abstract void isStartTransitions();
+
 
     protected VM mViewModel;
 

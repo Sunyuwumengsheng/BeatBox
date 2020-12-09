@@ -1,12 +1,10 @@
 package com.example.beatbox.viewmodel;
 
 import android.app.Application;
-import android.os.Parcel;
 import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.databinding.ObservableField;
-import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
 import com.example.beatbox.api.HttpUtil;
@@ -14,7 +12,7 @@ import com.example.beatbox.callbacks.HttpCallback;
 import com.example.beatbox.model.UserRequest;
 import com.example.beatbox.model.UserResponse;
 import com.example.beatbox.repository.UserRepository;
-import com.example.beatbox.view.BaseViewModel;
+import com.example.baselibrary.BaseViewModel;
 
 import java.util.Objects;
 
