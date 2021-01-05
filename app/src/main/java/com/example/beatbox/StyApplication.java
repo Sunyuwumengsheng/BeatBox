@@ -20,10 +20,10 @@ public class StyApplication extends Application {
         super.onCreate();
         api = HttpUtil.getInstance().getApi();
         MMKV.initialize(this);
-        DsDataStore.Companion.getInstance().initDataStore(getApplicationContext());
     }
 
     public static Api getApi() {
         return api;
     }
+
 }

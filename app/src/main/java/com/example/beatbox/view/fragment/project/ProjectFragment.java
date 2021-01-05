@@ -1,5 +1,6 @@
 package com.example.beatbox.view.fragment.project;
 
+import androidx.lifecycle.Lifecycle;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.os.Bundle;
@@ -34,5 +35,7 @@ public class ProjectFragment extends Fragment {
         mViewModel = new ViewModelProvider(this).get(ProjectViewModel.class);
         // TODO: Use the ViewModel
     }
+
+
 
 }

@@ -62,8 +62,7 @@ public class MainActivity extends BaseActivity<UserViewModel,ActivityMainBinding
     }
 
     private void initView(){
-
-        ViewPageAdapter viewPageAdapter = new ViewPageAdapter(this);
+        ViewPageAdapter viewPageAdapter = new ViewPageAdapter(getSupportFragmentManager(),this.getLifecycle());
         binding.viewPage.setPageTransformer(new MarginPageTransformer((int) getResources().getDimension(R.dimen.dp_10)));
         binding.viewPage.setAdapter(viewPageAdapter);
     }

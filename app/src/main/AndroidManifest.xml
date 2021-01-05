@@ -14,8 +14,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning">
-        <activity android:name=".view.RegisterActivity"></activity>
-
+        <activity
+            android:name=".view.WebViewActivity"
+            android:process=":webViewActivity" />
+        <activity android:name=".view.RegisterActivity" />
+        <service
+            android:name="com.tencent.smtt.export.external.DexClassLoaderProviderService"
+            android:label="dexopt"
+            android:process=":dexopt" >
+        </service>
         <meta-data
             android:name="design_wight_in_dp"
             android:value="415" />

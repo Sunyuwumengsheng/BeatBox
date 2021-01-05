@@ -32,7 +32,7 @@ dependencies {
 
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'com.google.android.material:material:1.2.1'
-    testImplementation 'junit:junit:4.+'
+    testImplementation 'junit:junit:4.13.1'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
@@ -61,4 +61,21 @@ dependencies {
     api 'com.youth.banner:banner:2.1.0'
 
     api 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.4'
+
+    def paging_version = "2.1.2"
+
+    api "androidx.paging:paging-runtime:$paging_version" // For Kotlin use paging-runtime-ktx
+
+    // alternatively - without Android dependencies for testing
+    testImplementation "androidx.paging:paging-common:$paging_version" // For Kotlin use paging-common-ktx
+
+    // optional - RxJava support
+    api "androidx.paging:paging-rxjava2:$paging_version"
+    
+    //图片加载库
+    api 'com.squareup.picasso:picasso:2.71828'
+
+    api 'com.getkeepsafe.relinker:relinker:1.4.0'
+
+    api 'com.tencent.tbs.tbssdk:sdk:43939'
 }
